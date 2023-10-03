@@ -1,0 +1,13 @@
+{
+    "name": "raajkumarpaneru/subscriberable",
+    "description": "A package for subscription management",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raj Kumar Paneru",
+            "email": "raajkumarpaneru@gmail.com"
+        }
+    ],
+    "require": {}
+}
