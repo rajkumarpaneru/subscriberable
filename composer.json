@@ -9,5 +9,10 @@
             "email": "raajkumarpaneru@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Raajkumarpaneru\\Subscriberable\\": "src"
+        }
+    }
 }
