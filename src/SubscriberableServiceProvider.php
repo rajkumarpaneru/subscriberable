@@ -23,5 +23,15 @@ class SubscriberableServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('subscriberable.php'),
         ], 'config');
+
+
+            // Export the migration
+            if (! class_exists('CreateSubscribersTable')) {
+                $this->publishes([
+                    __DIR__ . '/../database/migrations/create_subscribers_table.php.stub' 
+                    => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_subscribers_table.php'),
+                    //another migration here
+                ], 'migrations');
+            }
     }
 }
