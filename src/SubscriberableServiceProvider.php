@@ -9,7 +9,7 @@ class SubscriberableServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'subscriberable');
     }
 
     public function boot()
@@ -19,5 +19,9 @@ class SubscriberableServiceProvider extends ServiceProvider
                 InstallSubscriberable::class,
             ]);
         }
+
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('subscriberable.php'),
+        ], 'config');
     }
 }
