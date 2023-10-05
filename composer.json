@@ -11,7 +11,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Raajkumarpaneru\\Subscriberable\\": "src"
+            "Raajkumarpaneru\\Subscriberable\\": "src",
+            "Raajkumarpaneru\\Subscriberable\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
