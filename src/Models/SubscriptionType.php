@@ -9,5 +9,7 @@ class SubscriptionType extends Model
 {
     use HasFactory;
 
+    public $timestamps = [];
+
     protected $guarded = [];
 }

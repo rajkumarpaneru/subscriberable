@@ -28,9 +28,16 @@ class SubscriberableServiceProvider extends ServiceProvider
             // Export the migration
             if (! class_exists('CreateSubscribersTable')) {
                 $this->publishes([
-                    __DIR__ . '/../database/migrations/create_subscribers_table.php.stub' 
+                    __DIR__ . '/../database/migrations/create_subscribers_table.php.stub'
                     => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_subscribers_table.php'),
                     //another migration here
+                ], 'migrations');
+            }
+
+            if (! class_exists('CreateSubscriptionTypesTable')) {
+                $this->publishes([
+                    __DIR__ . '/../database/migrations/2023_08_23_101326_create_subscription_types_table.php'
+                    => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_subscription_types_table.php'),
                 ], 'migrations');
             }
     }
