@@ -29,5 +29,10 @@
                 "Raajkumarpaneru\\Subscriberable\\SubscriberableServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "testf": "vendor/bin/phpunit --filter"
     }
+
 }
