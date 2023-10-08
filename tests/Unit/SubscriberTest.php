@@ -11,7 +11,7 @@ class SubscriberTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function test_can_create_subscriber()
+    public function subscriber_can_be_created()
     {
         $subscriber = Subscriber::factory()->create();
         $this->assertInstanceOf(Subscriber::class, $subscriber);
@@ -20,9 +20,9 @@ class SubscriberTest extends TestCase
     }
 
     /** @test */
-    public function test_can_read_subscriber()
+    public function subscriber_can_be_read()
     {
-        $subscriber = factory(Subscriber::class)->create();
+        $subscriber = Subscriber::factory()->create();
         $this->assertInstanceOf(Subscriber::class, $subscriber);
 
         $found = Subscriber::find($subscriber->id);
@@ -30,26 +30,28 @@ class SubscriberTest extends TestCase
     }
 
     /** @test */
-    public function test_can_update_subscriber()
+    public function subscriber_can_be_updated()
     {
-        $subscriber = factory(Subscriber::class)->create();
+        $subscriber = Subscriber::factory()->create();
         $this->assertInstanceOf(Subscriber::class, $subscriber);
 
         $updatedData = [
-            'status' => false,
+            'status' => 0,
             'payment_type' => 'Credit Card',
         ];
 
         $subscriber->update($updatedData);
+        $subscriber->refresh();
+        $this->assertEquals($subscriber->payment_type, 'Credit Card');
+        $this->assertEquals($subscriber->status, 0);
         $this->assertDatabaseHas('subscribers', $updatedData);
     }
 
     /** @test */
-    public function test_can_delete_subscriber()
+    public function subscriber_can_be_deleted()
     {
-        $subscriber = factory(Subscriber::class)->create();
+        $subscriber = Subscriber::factory()->create();
         $this->assertInstanceOf(Subscriber::class, $subscriber);
-
         $subscriber->delete();
         $this->assertDeleted($subscriber);
     }
