@@ -2,7 +2,7 @@
 
 namespace Raajkumarpaneru\Subscriberable\Database\Factories;
 
-use Raajkumarpaneru\Subscriberable\Models\Subscriber;
+use Raajkumarpaneru\Subscriberable\Models\Subscription;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SubscriberFactory extends Factory
@@ -12,7 +12,7 @@ class SubscriberFactory extends Factory
      *
      * @var string
      */
-    protected $model = Subscriber::class;
+    protected $model = Subscription::class;
 
     /**
      * Define the model's default state.

@@ -25,7 +25,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         // import the CreatePostsTable class from the migration
         include_once __DIR__ . '/../database/migrations/create_subscription_types_table.php';
-        include_once __DIR__ . '/../database/migrations/create_subscribers_table.php';
+        include_once __DIR__ . '/../database/migrations/create_subscriptions_table.php';
 
         // run the up() method of that migration class
         (new CreateSubscriptionTypesTable())->up();
