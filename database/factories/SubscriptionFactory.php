@@ -5,7 +5,7 @@ namespace Raajkumarpaneru\Subscriberable\Database\Factories;
 use Raajkumarpaneru\Subscriberable\Models\Subscription;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SubscriberFactory extends Factory
+class SubscriptionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.

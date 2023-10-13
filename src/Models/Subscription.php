@@ -13,7 +13,7 @@ class Subscription extends Model
 
     protected static function newFactory()
     {
-        return \Raajkumarpaneru\Subscriberable\Database\Factories\SubscriberFactory::new();
+        return \Raajkumarpaneru\Subscriberable\Database\Factories\SubscriptionFactory::new();
     }
 
 }
