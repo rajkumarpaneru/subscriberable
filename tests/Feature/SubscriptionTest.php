@@ -13,11 +13,12 @@ class SubscriptionTest extends TestCase
     /** @test */
     public function a_new_subscription_is_created()
     {
+        $this->withoutExceptionHandling();
         // To make sure we don't start with a Post
         $this->assertCount(0, Subscription::all());
 
 
-        $response = $this->post('api/subscriptions', [
+        $response = $this->post('subscriberable/api/subscriptions', [
             [
                 'subscriberable_id' => 1,
                 'subscriberable_type' => 'Fake\Package',
@@ -42,7 +43,7 @@ class SubscriptionTest extends TestCase
             $this->assertEquals('2023-01-01', $subscription->start_date->format('Y-m-d'));
             $this->assertEquals('2023-12-30', $subscription->end_date->format('Y-m-d'));
             $this->assertEquals(1, $subscription->status);
-            $this->assertEquals('cash', $subscription->payement_type);
+            $this->assertEquals('cash', $subscription->payment_type);
             $this->assertEquals(5000, $subscription->amount_paid);
             $this->assertEquals(1, $subscription->subscription_type_id);
         });

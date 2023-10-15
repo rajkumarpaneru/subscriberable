@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Raajkumarpaneru\Subscriberable\Http\Api\Controllers;
+namespace Raajkumarpaneru\Subscriberable\Http\Controllers\Api;
 
 use Raajkumarpaneru\Subscriberable\Http\Controllers\Controller;
 use Raajkumarpaneru\Subscriberable\Models\Subscription;
